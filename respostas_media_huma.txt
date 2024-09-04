@@ -1,0 +1,5 @@
+Média de português: 9.0
+Média de história: 5.0
+Média de filosofia: 6.0
+Média de artes: 6.0
+Média de inglês: 6.0

@@ -1,0 +1,7 @@
+Tempo de estudo na segunda: 2.0
+Tempo de estudo na terça: 2.0
+Tempo de estudo na quarta: 2.0
+Tempo de estudo na quinta: 2.0
+Tempo de estudo na sexta: 2.0
+Tempo de estudo no sábado: 2.0
+Tempo de estudo no domingo: 2.0
