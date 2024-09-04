@@ -67,10 +67,10 @@ while True:
                         import pag_inicial
                         break
                     else:
-                        print("Senha incorreta! Tente novamente.") 
+                        print("Senha incorreta! Refaça o seu login.") 
                         break
             else:
-                print("Login incorreto! Tente novamente.")      
+                print("Login incorreto! Refaça o seu login.")      
                 break      
     else:
         import cadastroUser  # importando os dados do módulo cadastroUser
