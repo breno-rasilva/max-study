@@ -56,7 +56,7 @@ resposta = menu_perguntas("Você possui cadastro?'SIM/NÃO ou S/N)")
 while True:
     if resposta == True:
         while True:
-            print("Login")
+            print("Login (utilize o seu E-MAIL para efetuar o login)")
             login = input()
             if login == email_txt:
                 print("Senha")
@@ -71,6 +71,6 @@ while True:
                         break
             else:
                 print("Login incorreto! Refaça o seu login.")      
-                break      
+                break   
     else:
         import cadastroUser  # importando os dados do módulo cadastroUser

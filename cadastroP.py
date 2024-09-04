@@ -63,7 +63,7 @@ def menu_perguntas_int(pergunta):
         except ValueError:  # se o usuário digitar um caractere que esteja fora do esperado, 
             #o programa apresenta um erro e retorna a pergunta
             print(
-                "Resposta inválida. Por favor, insira um número inteiro.")
+                "Resposta inválida. Por favor, insira um número INTEIRO(ex:'2').")
 
 
 def menu_perguntas_float(pergunta):
@@ -74,7 +74,7 @@ def menu_perguntas_float(pergunta):
             return resposta
         except ValueError:
             print(
-                "Resposta inválida. Por favor, insira um número inteiro ou decimal ('2' ou '2.5').")
+                "Resposta inválida. Por favor, insira um número INTEIRO ou DECIMAL (ex:'2' ou '2.5').")
 
 
 # Bloco de perguntas--------------------------------------------------------------------------------------------------------------------

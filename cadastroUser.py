@@ -1,5 +1,5 @@
 import os  # biblioteca OS que limpa o terminal a cada
-
+import time
 respostas = {
     'sim': True,
     'não': False,
@@ -117,11 +117,10 @@ print("Telefone ou celular: ", telefone)
 print("Senha: ", senha1)
 print("")
 print("")
-print("Digite (1) se deseja alterar ou (2) para finalizar.")
-print("")
-print("")
-
+time.sleep(5)
 os.system("cls")
+
+
 while True:
     print("Digite (1) se deseja alterar ou (2) para finalizar.")
     cadastro = input("Digite sua escolha: ").strip().lower()
@@ -186,6 +185,7 @@ while True:
                         print(f"O texto deve ter entre {tamanho_min2} e {
                             tamanho_max2} caracteres.")
                         os.system("cls")
+                    break
                 while True:
                     senha1 = input("Digite novamente sua senha:")
                     if tamanho_min2 <= len(senha1) <= tamanho_max2:
@@ -195,18 +195,25 @@ while True:
                         print(f"O texto deve ter entre {tamanho_min2} e {
                             tamanho_max2} caracteres.")
                         os.system("cls")
+                    break
 
                 while (senha != senha1):  # validação de senhas
                     senha1 = input("Senhas não conferem, digite novamente: ")
                     if senha1 != "":
                         print("Senha: ", senha1)
                     else:
-                        break
+                     break
                     os.system("cls")
-
             else:
                 print("Opção incorreta! Tente novamente.")
-                break
+            break
+        with open('email.txt', 'w') as emailtxt:
+            for resposta in email:
+                emailtxt.write(resposta)
+
+        with open('senha.txt', 'w') as senhatxt:
+            for resposta in senha1:
+                senhatxt.write(resposta)
 
     elif cadastro in ['2']:
         print("")
