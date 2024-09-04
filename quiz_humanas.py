@@ -198,19 +198,19 @@ while True:
         print("Após estudar o assunto, responda o QUIZ:")
         time.sleep(5)
         quiz()
-        print("Digite 'INICIAL' para voltar para página inicial  \nDigite 'SAIR' para sair do aplicativo \nDigite 'CONTINUAR' para permanecer na pagina de estudos")
+        print("Digite '1' para voltar para página INICIAL  \nDigite '2' para SAIR do aplicativo \nDigite '3' para PERMANECER na pagina de estudos")
         while True:
 
             final = input().lower()
-            if final in ['inicial']:
+            if final in ['1']:
                 import pag_inicial
-            elif final in ['sair']:
+            elif final in ['2']:
                 import main
-            elif final in ['continuar']:
+            elif final in ['3']:
                 import notas
             else:
                 print("Resposta inválida, tente novamente!")
-                print("Digite 'INICIAL' para voltar para página inicial  \nDigite 'SAIR' para sair do aplicativo \nDigite 'CONTINUAR' para permanecer na pagina de estudos")
+                print("Digite '1' para voltar para página INICIAL  \nDigite '2' para SAIR do aplicativo \nDigite '3' para PERMANECER na pagina de estudos")
             break
 
     elif resposta_certa1_normalizada == "2":
@@ -221,19 +221,19 @@ while True:
         print("Após estudar o assunto, responda o QUIZ:")
         time.sleep(5)
         quiz_1()
-        print("Digite 'INICIAL' para voltar para página inicial  \nDigite 'SAIR' para sair do aplicativo \nDigite 'CONTINUAR' para permanecer na pagina de estudos")
+        print("Digite '1' para voltar para página INICIAL  \nDigite '2' para SAIR do aplicativo \nDigite '3' para PERMANECER na pagina de estudos")
         while True:
 
             final = input().lower()
-            if final in ['inicial']:
+            if final in ['1']:
                 import pag_inicial
-            elif final in ['sair']:
+            elif final in ['2']:
                 import main
-            elif final in ['continuar']:
+            elif final in ['3']:
                 import notas
             else:
                 print("Resposta inválida, tente novamente!")
-                print("Digite 'INICIAL' para voltar para página inicial  \nDigite 'SAIR' para sair do aplicativo \nDigite 'CONTINUAR' para permanecer na pagina de estudos")
+                print("Digite '1' para voltar para página INICIAL  \nDigite '2' para SAIR do aplicativo \nDigite '3' para PERMANECER na pagina de estudos")
             break
 
     elif resposta_certa1_normalizada == "3":
@@ -244,19 +244,19 @@ while True:
         print("Após estudar o assunto, responda o QUIZ:")
         time.sleep(5)
         quiz_2()
-        print("Digite 'INICIAL' para voltar para página inicial  \nDigite 'SAIR' para sair do aplicativo \nDigite 'CONTINUAR' para permanecer na pagina de estudos")
+        print("Digite '1' para voltar para página INICIAL  \nDigite '2' para SAIR do aplicativo \nDigite '3' para PERMANECER na pagina de estudos")
         while True:
 
             final = input().lower()
-            if final in ['inicial']:
+            if final in ['1']:
                 import pag_inicial
-            elif final in ['sair']:
+            elif final in ['2']:
                 import main
-            elif final in ['continuar']:
+            elif final in ['3']:
                 import notas
             else:
                 print("Resposta inválida, tente novamente!")
-                print("Digite 'INICIAL' para voltar para página inicial  \nDigite 'SAIR' para sair do aplicativo \nDigite 'CONTINUAR' para permanecer na pagina de estudos")
+                print("Digite '1' para voltar para página INICIAL  \nDigite '2' para SAIR do aplicativo \nDigite '3' para PERMANECER na pagina de estudos")
             break
 
     elif resposta_certa1_normalizada == "4":
@@ -267,14 +267,14 @@ while True:
         print("Após estudar o assunto, responda o QUIZ:")
         time.sleep(5)
         quiz_3()
-        print("Digite 'INICIAL' para voltar para página inicial  \nDigite 'SAIR' para sair do aplicativo \nDigite 'CONTINUAR' para permanecer na pagina de estudos")
+        print("Digite '1' para voltar para página INICIAL  \nDigite '2' para SAIR do aplicativo \nDigite '3' para PERMANECER na pagina de estudos")
         while True:
             final = input().lower()
-            if final in ['inicial']:
+            if final in ['1']:
                 import pag_inicial
-            elif final in ['sair']:
+            elif final in ['2']:
                 import main
-            elif final in ['continuar']:
+            elif final in ['3']:
                 import notas
             else:
                 print("Resposta inválida, tente novamente!")
@@ -289,17 +289,17 @@ while True:
         print("Após estudar o assunto, responda o QUIZ:")
         time.sleep(5)
         quiz_4()
-        print("Digite 'INICIAL' para voltar para página inicial  \nDigite 'SAIR' para sair do aplicativo \nDigite 'CONTINUAR' para permanecer na pagina de estudos")
+        print("Digite '1' para voltar para página INICIAL  \nDigite '2' para SAIR do aplicativo \nDigite '3' para PERMANECER na pagina de estudos")
         while True:
 
             final = input().lower()
-            if final in ['inicial']:
+            if final in ['1']:
                 import pag_inicial
-            elif final in ['sair']:
+            elif final in ['2']:
                 import main
-            elif final in ['continuar']:
+            elif final in ['3']:
                 import notas
             else:
                 print("Resposta inválida, tente novamente!")
-                print("Digite 'INICIAL' para voltar para página inicial  \nDigite 'SAIR' para sair do aplicativo \nDigite 'CONTINUAR' para permanecer na pagina de estudos")
+                print("Digite '1' para voltar para página INICIAL  \nDigite '2' para SAIR do aplicativo \nDigite '3' para PERMANECER na pagina de estudos")
             break

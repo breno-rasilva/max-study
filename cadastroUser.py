@@ -107,7 +107,7 @@ with open('senha.txt', 'w') as senhatxt:
 
 print("")
 print("")
-print("Suas informações estão corretas? Senão, volte e atualize.")
+print("Suas informações estão corretas? Senão, atualize.")
 print("")
 print("")
 print("Nome completo: ", nome_completo)
@@ -117,6 +117,7 @@ print("Telefone ou celular: ", telefone)
 print("Senha: ", senha1)
 print("")
 print("")
+print("Aguarde 5 segundos...")
 time.sleep(5)
 os.system("cls")
 
