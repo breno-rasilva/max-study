@@ -1,4 +1,4 @@
-import os  # biblioteca OS que limpa o terminal a cada
+import os  # biblioteca OS que limpa o terminal 
 import time
 respostas = {
     'sim': True,
@@ -19,7 +19,7 @@ def menu_perguntas(pergunta):  # função para as perguntas
 
             return respostas[resposta]
         else:
-            print("Resposta inválida. Por favor, digite 'SIM/NÃO ou S/N:.")
+            print("Resposta inválida. Por favor, digite 'SIM/NÃO ou S/N':")
 
 
 tamanho_min = 5
@@ -123,12 +123,12 @@ os.system("cls")
 
 
 while True:
-    print("Digite (1) se deseja alterar ou (2) para finalizar.")
+    print("Digite (1) se deseja ALTERAR ou (2) para FINALIZAR.")
     cadastro = input("Digite sua escolha: ").strip().lower()
     if cadastro in ['1']:  # verificando se a cadastro está prsente na lista [atualizar]
 
         opcoes = input(
-            "Digite o número da opção que deseja alterar: \n\n1-NOME COMPLETO; \n2-DATA DE NASCIMENTO; \n3-E-MAIL; \n4-TELEFONE; \n5-SENHA.\n")
+            "Digite o número da opção que deseja alterar: \n\n1- NOME COMPLETO; \n2- DATA DE NASCIMENTO; \n3- E-MAIL; \n4- TELEFONE; \n5- SENHA.\n")
         while True:
             if opcoes == '1':
                 while True:
@@ -226,7 +226,7 @@ while True:
         print("Senha: ", senha1)
         print("Cadastro concluído com sucesso!")
 
-        cadastro_p = menu_perguntas("Você é professor(a)? SIM/NÃO")
+        cadastro_p = menu_perguntas("Você é professor(a)? 'SIM/NÃO ou S/N':")
         while True:
             if cadastro_p == True:
                 print("Cadastro concluído com sucesso!")
@@ -234,7 +234,7 @@ while True:
                 break
             else:
                 cadastro = menu_perguntas(
-                    "Você quer personalizar o seu cadastro? 'SIM/NÃO ou S/N:")
+                    "Você quer personalizar o seu cadastro? 'SIM/NÃO ou S/N':")
                 while cadastro == True:
                     import cadastroP
                 else:
@@ -243,5 +243,5 @@ while True:
 
     else:
         print("Resposta inválida, tente novamente!")
-        print("Digite (1) se deseja alterar ou (2) para finalizar.")
+        print("Digite (1) se deseja ALTERAR ou (2) para FINALIZAR.")
         os.system("cls")

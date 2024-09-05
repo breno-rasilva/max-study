@@ -1,5 +1,6 @@
 import os
 import time
+import datetime
 
 respostas = {
     'sim': True,
@@ -20,7 +21,7 @@ def menu_perguntas(pergunta):  # função para as perguntas
 
             return respostas[resposta]
         else:
-            print("Resposta inválida. Por favor, digite 'SIM/NÃO ou S/N.")
+            print("Resposta inválida. Por favor, digite 'SIM/NÃO ou S/N':")
 
 def menu_opcoes(pergunta, opcoes):# função criada para exibir as opções das perguntas para o usuário
     os.system("cls")  # Limpa o terminal após cada execução
@@ -42,7 +43,7 @@ def menu_opcoes(pergunta, opcoes):# função criada para exibir as opções das 
         if all(0 <= i < len(opcoes) for i in escolhas):
             break  # Sai do loop se todas as escolhas forem válidas
         else:
-            print("\n\nErro!!! Opção inválida. Tente novamente.")
+            print("\n\nOpção inválida. Tente novamente.")
             time.sleep(2)
 
      # Gera a lista das opções escolhidas
@@ -75,36 +76,39 @@ def menu_perguntas_float(pergunta):
         except ValueError:
             print(
                 "Resposta inválida. Por favor, insira um número INTEIRO ou DECIMAL (ex:'2' ou '2.5').")
+            
+def converter_hora(horario):
+    while True:
+        hora_str = input("Digite a hora no formato HH:MM: ")
+
+        try:
+            datetime.datetime.strptime(hora_str, '%H:%M')
+            break  # Se não houve exceção, o formato está correto
+        except ValueError:
+            print("Formato de hora inválido. Use HH:MM.")
 
 
 # Bloco de perguntas--------------------------------------------------------------------------------------------------------------------
-estuda = "Você estuda atualmente em alguma instituíção de ensíno? Responda com 'SIM/NÃO ou S/N:"
-reprovou = "Você já reprovou algum ano do ensino médio? Responda com 'SIM/NÃO:"
+estuda = "Você estuda atualmente em alguma instituíção de ensíno? Responda com 'SIM/NÃO ou S/N':"
+reprovou = "Você já reprovou algum ano do ensino médio? Responda com 'SIM/NÃO ou S/N':"
 responda = "De acordo com as suas respostas, responda:"
 opcoes1 = ["Reprovou por falta;", "Abandonou os estudos;",
            "Problemas pessoais;", "Precisou trabalhar;", "Ajudar os pais."]
-estuda_casa = "Você costuma estudar em casa? Responda com 'SIM/NÃO ou S/N:"
-tempo_seg = "Quanto tempo livre você tem na SEGUNDA:"
-tempo_ter = "Quanto tempo livre você tem na TERÇA:"
-tempo_quar = "Quanto tempo livre você tem na QUARTA:"
-tempo_quin = "Quanto tempo livre você tem na QUINTA:"
-tempo_sex = "Quanto tempo livre você tem na SEXTA:"
-tempo_sab = "Quanto tempo livre você tem no SÁBADO:"
-tempo_dom = "Quanto tempo livre você tem no DOMINGO:"
+estuda_casa = "Você costuma estudar em casa? Responda com 'SIM/NÃO ou S/N':"
 media_port = "Informe a média de língua PORTUGUESA:"
-media_mat = "Informe a média de MATEMÁTICA:"
-media_hist = "Informe a média de HISTÓRIA:"
-media_bio = "Informe a média de BIOLOGIA:"
-media_filo = "Informe a média de FILOSOFIA:"
-media_qui = "Informe a média de QUÍMICA:"
-media_arte = "Informe a média de ARTE:"
-media_geo = "Informe a média de GEOGRAFIA:"
-media_ing = "Informe a média de INGLÊS:"
+media_mat = "Informe a média de MATEMÁTICA (ex: '8.5' ou '8'):"
+media_hist = "Informe a média de HISTÓRIA (ex: '8.5' ou '8'):"
+media_bio = "Informe a média de BIOLOGIA (ex: '8.5' ou '8'):"
+media_filo = "Informe a média de FILOSOFIA (ex: '8.5' ou '8'):"
+media_qui = "Informe a média de QUÍMICA (ex: '8.5' ou '8'):"
+media_arte = "Informe a média de ARTE (ex: '8.5' ou '8'):"
+media_geo = "Informe a média de GEOGRAFIA (ex: '8.5' ou '8'):"
+media_ing = "Informe a média de INGLÊS (ex: '8.5' ou '8'):"
 dispositivo = "Você possui algum dispositivo?(Smartphone, Tablet ou Computador)"
 opcoes3 = ["Smartphone;", "Tablet;", "Computador;",
            "Todas as opções.", "Nenhum dispositivo"]
 compartilha_disp = "Você compartilha este dispositivo com alguém? SE SIM, responda com a quantidade de pessoas, SENÃO digite 0:"
-internet = "Tem acesso a internet? Responda com 'SIM/NÃO ou S/N:"
+internet = "Tem acesso a internet? Responda com 'SIM/NÃO ou S/N':"
 opcoes5 = ["Financeiro;", "Localização;",
            "Não possui dispositivo com acesso a internet."]
 tipo_inter = "Qual é o tipo de sua internet?"
@@ -113,7 +117,7 @@ opcoes2 = ["Dados móveis;", "Internet residencial;",
 responda2 = "De acordo com a sua resposta, responda:"
 opcoes4 = ["Abandonou os estudos;", "Problemas pessoais;",
            "Você precisou trabalhar;", "Ajuda os pais."]
-estudou_antes = "Você já estudou antes? Responda com 'SIM/NÃO:"
+estudou_antes = "Você já estudou antes? Responda com 'SIM/NÃO ou S/N':"
 opcoes6 = ["Não sabe como organizar os estudos;", "Não conhece nenhuma plataforma online de estudos;",
            "Não tem costume de organizar os estudos;", "Não gosta."]
 
@@ -192,51 +196,50 @@ def media_disciplinas_huma():
 
 # ------------------------------------------------------------------------------------
 
-def dias_semana():
+def registrar_horarios():
     os.system("cls")
-    respostas = []
-    resposta4 = menu_perguntas_float(tempo_seg)
-    print("Sua resposta:", resposta4)
-    respostas.append(f"Tempo de estudo na segunda: {resposta4}")
-    print("")
+    """
+    Função para registrar a hora e os minutos para cada dia da semana no formato HH:MM e armazenar em um arquivo.
 
-    resposta5 = menu_perguntas_float(tempo_ter)
-    print("Sua resposta:", resposta5)
-    respostas.append(f"Tempo de estudo na terça: {resposta5}")
-    print("")
+    Retorna:
+        Um dicionário com os dias da semana como chaves e tuplas (hora, minuto) como valores.
+    """
 
-    resposta6 = menu_perguntas_float(tempo_quar)
-    print("Sua resposta:", resposta6)
-    respostas.append(f"Tempo de estudo na quarta: {resposta6}")
-    print("")
+    horarios = {}
+    dias_semana = ['Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado', 'Domingo']
 
-    resposta7 = menu_perguntas_float(tempo_quin)
-    print("Sua resposta:", resposta7)
-    respostas.append(f"Tempo de estudo na quinta: {resposta7}")
-    print("")
+    for dia in dias_semana:
+        while True:
+            horario = input(f"Quanto tempo livre você tem no(a) {dia} (ex: formato HH:MM):\n ")
+            try:
+                hora, minuto = map(int, horario.split(':'))
+                if 0 <= hora <= 23 and 0 <= minuto <= 59:
+                    break
+                else:
+                    print("Hora ou minuto inválido. Digite novamente.")
+            except ValueError:
+                print("Formato de hora inválido. Use HH:MM.")
 
-    resposta8 = menu_perguntas_float(tempo_sex)
-    print("Sua resposta:", resposta8)
-    respostas.append(f"Tempo de estudo na sexta: {resposta8}")
-    print("")
+        horarios[dia] = (hora, minuto)
 
-    resposta9 = menu_perguntas_float(tempo_sab)
-    print("Sua resposta:", resposta9)
-    respostas.append(f"Tempo de estudo no sábado: {resposta9}")
-    print("")
+    # Escrevendo o dicionário em um arquivo após a coleta completa
+    # ... (código anterior)
 
-    resposta10 = menu_perguntas_float(tempo_dom)
-    print("Sua resposta:", resposta10)
-    respostas.append(f"Tempo de estudo no domingo: {resposta10}")
-    print("")
+# Escrevendo o dicionário em um arquivo após a coleta completa
+    with open('respostas_dias_semana.txt', 'w') as semana_dias:
+        for dia, horario in horarios.items():
+            hora, minuto = horario
+            hora_formatada = str(hora).zfill(2)
+            minuto_formatado = str(minuto).zfill(2)
+            semana_dias.write(f"{dia}: {hora_formatada}:{minuto_formatado}\n")
+
+ 
 
     # Salvar as respostas em um arquivo de texto
-    with open('respostas_dias_semana.txt', 'w') as semana_dias:  # 'w' para sobrescrever
-        for resposta in respostas:
-            semana_dias.write(resposta + '\n')
 
 
-print("Respostas armazenadas com sucesso!")
+
+
 # --------------------------------------------------------------------
 
 
@@ -261,8 +264,7 @@ while True:
 
                 while True:
                     if (resposta3 == True):
-                        dias_semana()
-
+                        registrar_horarios()
                         media_disciplinas_exa()
 
                         media_disciplinas_huma()
@@ -307,7 +309,7 @@ while True:
 
                 while True:
                     if (resposta3 == True):
-                        dias_semana()
+                        registrar_horarios()
                         media_disciplinas_exa()
                         media_disciplinas_huma()
                         menu_opcoes(dispositivo, opcoes3)
@@ -358,7 +360,7 @@ while True:
 
                 while True:
                     if (resposta3 == True):
-                        dias_semana()
+                        registrar_horarios()
                         media_disciplinas_exa()
                         media_disciplinas_huma()
                         menu_opcoes(dispositivo, opcoes3)

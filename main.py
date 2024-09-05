@@ -41,7 +41,7 @@ def menu_perguntas(pergunta):  # função para as perguntas
 
             return respostas[resposta]
         else:
-            print("Resposta inválida. Por favor, digite 'SIM/NÃO ou S/N.")
+            print("Resposta inválida. Por favor, digite 'SIM/NÃO ou S/N':")
 
 
 print("")
@@ -52,7 +52,7 @@ print("")
 print("")
 
 
-resposta = menu_perguntas("Você possui cadastro?'SIM/NÃO ou S/N)")
+resposta = menu_perguntas("Você possui cadastro?'SIM/NÃO ou S/N':)")
 while True:
     if resposta == True:
         while True:
