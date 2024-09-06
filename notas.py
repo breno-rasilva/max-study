@@ -8,19 +8,10 @@ import re
 
 
 def calcular_mediana_horarios(caminho_txt):
-    """
-    Calcula a mediana de horários em um arquivo TXT, tratando diversos formatos.
-
-    Args:
-        caminho_txt (str): Caminho completo para o arquivo TXT.
-
-    Returns:
-        str: Mediana dos horários no formato HH:MM ou None em caso de erro.
-    """
 
     horarios_em_minutos = []
-    try:
-        with open(caminho_txt, "r") as arquivo:
+
+    with open(caminho_txt, "r") as arquivo:
             for linha_num, linha in enumerate(arquivo, start=1):
                 linha = linha.strip()
                 # Expressão regular mais flexível para permitir diferentes formatos
@@ -30,22 +21,20 @@ def calcular_mediana_horarios(caminho_txt):
                 hora, minuto = map(int, match.groups())
                 horarios_em_minutos.append(hora * 60 + minuto)
 
-        mediana_minutos = statistics.median(horarios_em_minutos)
-        horas = mediana_minutos // 60
-        minutos = mediana_minutos % 60
-        return f"{horas:02d}:{minutos:02d}"
+                mediana_minutos = statistics.median(horarios_em_minutos)
+                horas = mediana_minutos // 60
+                minutos = mediana_minutos % 60
+                return f"{horas:02d}:{minutos:02d}"
 
-    except FileNotFoundError:
-        print(f"Erro: O arquivo '{caminho_txt}' não foi encontrado.")
-    except ValueError as e:
-        print(e)
-    except Exception as e:
-        print(f"Erro inesperado: {e}")
+   
 
 # Exemplo de uso
 caminho_do_arquivo = r"C:\\Users\\breno\\OneDrive\\Documentos\\PROJETOS 1° PERIODO\\APP AULA atualizado\\respostas_dias_semana.txt"
 mediana = calcular_mediana_horarios(caminho_do_arquivo)
-print(f"A mediana dos horários é: {mediana} minutos ou hora")
+print("\nDe acordo com sua resposta no cadastro, obteve-se o seguinte resultado.")
+print(f"\nO tempo médio que você deve estudar todos os dias: {mediana}")
+print("\n\nAGUARDE! VOCÊ SERÁ REDIRECIONADO...\n\n")
+
 
 #caminho_txt = r"C:\\Users\\breno\\OneDrive\\Documentos\\PROJETOS 1° PERIODO\\APP AULA atualizado\\respostas_dias_semana.txt"
 

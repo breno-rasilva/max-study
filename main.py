@@ -7,9 +7,6 @@ respostas = {
     'nao': False
 }
 
-
-
-
 def email_caminho(emailtxt):
  with open(emailtxt, "r", encoding='utf-8') as arquivo:
         linhas = arquivo.readlines()
@@ -46,7 +43,7 @@ def menu_perguntas(pergunta):  # função para as perguntas
 
 print("")
 print("")
-print("Bem-vindo")
+print("BEM-VINDO")
 print("Max Study")
 print("")
 print("")
