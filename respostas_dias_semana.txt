@@ -1,7 +1,7 @@
-Segunda: 00:50
-Terça: 00:50
-Quarta: 00:50
-Quinta: 00:50
-Sexta: 00:50
-Sábado: 00:50
-Domingo: 00:50
+Segunda: 00:45
+Terça: 00:45
+Quarta: 00:45
+Quinta: 00:45
+Sexta: 00:45
+Sábado: 00:45
+Domingo: 00:45

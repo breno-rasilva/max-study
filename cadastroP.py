@@ -64,13 +64,13 @@ def menu_perguntas_float(pergunta):
             print(
                 "Resposta inválida. Por favor, insira um número INTEIRO ou DECIMAL (ex:'2' ou '2.5').")
             
-def converter_hora(horario):
+def converter_hora():
     while True:
-        hora_str = input("Digite a hora no formato HH:MM: ")
+        hora = input("Digite a hora no formato HH:MM: ")
 
         try:
-            datetime.datetime.strptime(hora_str, '%H:%M')
-            break  # Se não houve exceção, o formato está correto
+            datetime.datetime.strptime(hora, '%H:%M')
+            break 
         except ValueError:
             print("Formato de hora inválido. Use HH:MM.")
 
