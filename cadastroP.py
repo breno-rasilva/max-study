@@ -1,6 +1,7 @@
 import os
 import time
 import datetime
+import codecs
 
 respostas = {
     'sim': True,
@@ -135,7 +136,7 @@ def media_disciplinas_exa():
     respostas.append(f"Média de geografia: {resposta18}")
     print("")
 
-    with open('respostas_media_exa.txt', 'w') as exatas:
+    with codecs.open('respostas_media_exa.txt', 'w', 'utf-8') as exatas:
         for resposta in respostas:
             exatas.write(resposta + '\n')
 
@@ -174,7 +175,7 @@ def media_disciplinas_huma():
     respostas.append(f"Média de inglês: {resposta19}")
     print("")
 
-    with open('respostas_media_huma.txt', 'w') as humanas:  # 'w' para sobrescrever
+    with  codecs.open('respostas_media_huma.txt', 'w', 'utf-8') as humanas:  # 'w' para sobrescrever
         for resposta in respostas:
             humanas.write(resposta + '\n')
 
@@ -185,12 +186,7 @@ def media_disciplinas_huma():
 
 def registrar_horarios():
     os.system("cls")
-    """
-    Função para registrar a hora e os minutos para cada dia da semana no formato HH:MM e armazenar em um arquivo.
 
-    Retorna:
-        Um dicionário com os dias da semana como chaves e tuplas (hora, minuto) como valores.
-    """
 
     horarios = {}
     dias_semana = ['Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado', 'Domingo']
@@ -209,20 +205,12 @@ def registrar_horarios():
 
         horarios[dia] = (hora, minuto)
 
-    # Escrevendo o dicionário em um arquivo após a coleta completa
-    # ... (código anterior)
-
-# Escrevendo o dicionário em um arquivo após a coleta completa
-    with open('respostas_dias_semana.txt', 'w') as semana_dias:
+    with  codecs.open('respostas_dias_semana.txt', 'w','utf-8') as semana_dias:
         for dia, horario in horarios.items():
             hora, minuto = horario
             hora_formatada = str(hora).zfill(2)
             minuto_formatado = str(minuto).zfill(2)
             semana_dias.write(f"{dia}: {hora_formatada}:{minuto_formatado}\n")
-
- 
-
-    # Salvar as respostas em um arquivo de texto
 
 
 
