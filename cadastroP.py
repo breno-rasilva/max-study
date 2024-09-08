@@ -23,36 +23,23 @@ def menu_perguntas(pergunta):  # função para as perguntas
         else:
             print("Resposta inválida. Por favor, digite 'SIM/NÃO ou S/N':")
 
-def menu_opcoes(pergunta, opcoes):# função criada para exibir as opções das perguntas para o usuário
-    os.system("cls")  # Limpa o terminal após cada execução
-
+def menu_opcoes(pergunta, opcoes):
+  
+    os.system("cls")
     while True:
-        os.system("cls")
-        print(pergunta)  # Exibe a pergunta para o usuário
-        print("Escolha uma ou mais opções:")
+        print(pergunta)
+        for i, opcao in enumerate(opcoes, start=1):
+            print(f"{i}. {opcao}")
 
-        for i, opcao in enumerate(opcoes):
-            print(f"{i + 1}. {opcao}")  # imprimi cada opção dos números começando do 1
-
-        escolhas = input("Digite o número da(s) opção(ões) separadas por vírgula: ")
-
-        # Converte as escolhas em índices, subtraindo 1 para ajustar ao índice da lista
-        escolhas = [int(x) - 1 for x in escolhas.split(",")]
-
-        # Verifica se todas as escolhas estão dentro do intervalo válido
-        if all(0 <= i < len(opcoes) for i in escolhas):
-            break  # Sai do loop se todas as escolhas forem válidas
-        else:
-            print("\n\nOpção inválida. Tente novamente.")
-            time.sleep(2)
-
-     # Gera a lista das opções escolhidas
-     # Converte as escolhas em índices, subtraindo 1 para ajustar ao índice da lista
-     #Ou seja, toda lista em python ela começa no índice 0
-    opcoes_escolhidas = [opcoes[i] for i in escolhas]
-    print("Opções escolhida(s):", opcoes_escolhidas)
-    return opcoes_escolhidas
-
+        escolha = input("Digite o número da opção: ")
+        try:
+            escolha = int(escolha)
+            if 1 <= escolha <= len(opcoes):
+                return opcoes[escolha - 1]
+            else:
+                print("Opção inválida. Tente novamente.")
+        except ValueError:
+            print("Entrada inválida. Digite um número.")
 
 
 def menu_perguntas_int(pergunta):
