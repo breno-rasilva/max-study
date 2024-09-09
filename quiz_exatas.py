@@ -167,7 +167,7 @@ while True:
         print("\n\nApós estudar o assunto, responda o QUIZ:\n\n")
         time.sleep(5)
         quiz()
-        print("Digite '1' para voltar para página inicial  \n\nDigite '2' para sair do aplicativo \n\nDigite '3' para permanecer na pagina de estudos")
+        print("Digite '1' para voltar para página inicial  \n\nDigite '2' para sair do aplicativo \n\nDigite '3' para permanecer na página de estudos")
         while True:
 
             final = input().lower()
@@ -179,7 +179,7 @@ while True:
                 import notas
             else:
                 print("\n\nResposta inválida, tente novamente!\n\n")
-                print("Digite 'INICIAL' para voltar para página inicial  \n\nDigite 'SAIR' para sair do aplicativo \n\nDigite 'CONTINUAR' para permanecer na pagina de estudos")
+                print("Digite 'INICIAL' para voltar para página inicial  \n\nDigite 'SAIR' para sair do aplicativo \n\nDigite 'CONTINUAR' para permanecer na página de estudos")
             break
     elif escolha == 2:
         os.system("cls")
@@ -190,7 +190,7 @@ while True:
         print("Após estudar o assunto, responda o QUIZ:")
         time.sleep(5)
         quiz_1()
-        print("Digite 'INICIAL' para voltar para página inicial  \n\nDigite 'SAIR' para sair do aplicativo \n\nDigite 'CONTINUAR' para permanecer na pagina de estudos")
+        print("Digite 'INICIAL' para voltar para página inicial  \n\nDigite 'SAIR' para sair do aplicativo \n\nDigite 'CONTINUAR' para permanecer na página de estudos")
         while True:
 
             final = input().lower()
@@ -202,7 +202,7 @@ while True:
                 import notas
             else:
                 print("Resposta inválida, tente novamente!")
-                print("Digite '1' para voltar para página INICIAL  \nDigite '2' para SAIR do aplicativo \nDigite '3' para PERMANECER na pagina de estudos")
+                print("Digite '1' para voltar para página INICIAL  \nDigite '2' para SAIR do aplicativo \nDigite '3' para PERMANECER na página de estudos")
             break
     elif escolha == 3:
         print("\n\nAssunto que você pode estudar:")
@@ -212,7 +212,7 @@ while True:
         print("Após estudar o assunto, responda o QUIZ:")
         time.sleep(5)
         quiz_2()
-        print("Digite '1' para voltar para página INICIAL  \nDigite '2' para SAIR do aplicativo \nDigite '3' para PERMANECER na pagina de estudos")
+        print("Digite '1' para voltar para página INICIAL  \nDigite '2' para SAIR do aplicativo \nDigite '3' para PERMANECER na página de estudos")
         while True:
 
             final = input().lower()
@@ -224,7 +224,7 @@ while True:
                 import notas
             else:
                 print("Resposta inválida, tente novamente!")
-                print("Digite '1' para voltar para página INICIAL  \nDigite '2' para SAIR do aplicativo \nDigite '3' para PERMANECER na pagina de estudos")
+                print("Digite '1' para voltar para página INICIAL  \nDigite '2' para SAIR do aplicativo \nDigite '3' para PERMANECER na página de estudos")
             break
 
     elif escolha == 4:
@@ -235,7 +235,7 @@ while True:
         print("Após estudar o assunto, responda o QUIZ:")
         time.sleep(5)
         quiz_3()
-        print("Digite '1' para voltar para página INICIAL  \nDigite '2' para SAIR do aplicativo \nDigite '3' para PERMANECER na pagina de estudos")
+        print("Digite '1' para voltar para página INICIAL  \nDigite '2' para SAIR do aplicativo \nDigite '3' para PERMANECER na página de estudos")
         while True:
 
             final = input().lower()
@@ -247,13 +247,13 @@ while True:
                 import notas
             else:
                 print("Resposta inválida, tente novamente!")
-                print("Digite '1' para voltar para página INICIAL  \nDigite '2' para SAIR do aplicativo \nDigite '3' para PERMANECER na pagina de estudos")
+                print("Digite '1' para voltar para página INICIAL  \nDigite '2' para SAIR do aplicativo \nDigite '3' para PERMANECER na página de estudos")
             break
 
     else:
         os.system("cls")
         print("\n\nDisciplina não cadastrada!\n\n")
-        print("Digite '1' para voltar para página INICIAL  \nDigite '2' para SAIR do aplicativo \nDigite '3' para PERMANECER na pagina de estudos")
+        print("Digite '1' para voltar para página INICIAL  \nDigite '2' para SAIR do aplicativo \nDigite '3' para PERMANECER na página de estudos")
         while True:
 
             final = input().lower()
@@ -265,4 +265,4 @@ while True:
                 import notas
             else:
                 print("\n\nResposta inválida, tente novamente!\n\n")
-                print("Digite '1' para voltar para página INICIAL  \nDigite '2' para SAIR do aplicativo \nDigite '3' para PERMANECER na pagina de estudos")
+                print("Digite '1' para voltar para página INICIAL  \nDigite '2' para SAIR do aplicativo \nDigite '3' para PERMANECER na página de estudos")
