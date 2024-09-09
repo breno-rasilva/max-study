@@ -24,22 +24,13 @@ def menu_perguntas(pergunta):  # função para as perguntas
             print("Resposta inválida. Por favor, digite 'Sim' ou 'Não'.")
 
 
-def normalizar(texto):  # função para converter caracteres com acentos em textos simples. (texto)parâmetro
-    return unidecode.unidecode(texto).lower()
-
-
-def menu_perguntas(pergunta_1, resposta_certa):  # função para as perguntas
+def menu_opcoes(pergunta, opcoes):
     os.system("cls")
-    print(pergunta_1)
-    # Solicita a resposta do usuário
-    respostas = input("Digite sua resposta: ")
-    # compara a resposta do usuário com a resposta certa e converte para o texto simples
-    if normalizar(respostas) == normalizar(resposta_certa):
-        print("Resposta correta!\n")
-        return True
-    else:
-        print("Resposta incorreta.\n")
-        return False
+    print(pergunta)
+    for i, opcao in enumerate(opcoes, start=1):
+        print(f"{i}. {opcao}")
+    escolha = int(input("Escolha uma opção: "))
+    return escolha
 
 
 pergunta_1 = "Qual a disciplina você quer estudar? \n\n1-HISTÓRIA \n2-INGLÊS \n3-PORTUGUÊS \n4-FILOSOFIA \n5-ARTE \n\nDigite uma opção:"
@@ -187,10 +178,11 @@ def quiz_4():
 
 
 while True:
-    resposta_certa1 = input(pergunta_1 + " ")
-    resposta_certa1_normalizada = normalizar(resposta_certa1)
+    pergunta = "Escolha uma opção:"
+    opcoes = ["História;", "Inglês;","Língua Portuguesa;", "Filosofia;", "Artes;"]
+    escolha = menu_opcoes(pergunta, opcoes)
 
-    if resposta_certa1_normalizada == "1":
+    if escolha == 1:
         print("Assunto que você pode estudar:")
         link = "https://brasilescola.uol.com.br/historiab/brasil-republica.htm"
         print(f"Brasil República: {link}")
@@ -213,7 +205,7 @@ while True:
                 print("Digite '1' para voltar para página INICIAL  \nDigite '2' para SAIR do aplicativo \nDigite '3' para PERMANECER na pagina de estudos")
             break
 
-    elif resposta_certa1_normalizada == "2":
+    elif escolha == 2:
         print("Assunto que você pode estudar:")
         link = "https://mundoeducacao.uol.com.br/ingles/simple-past.htm"
         print(f"Simple Past: {link}")
@@ -236,7 +228,7 @@ while True:
                 print("Digite '1' para voltar para página INICIAL  \nDigite '2' para SAIR do aplicativo \nDigite '3' para PERMANECER na pagina de estudos")
             break
 
-    elif resposta_certa1_normalizada == "3":
+    elif escolha == 3:
         print("Assunto que você pode estudar:")
         link = "https://brasilescola.uol.com.br/gramatica/figuras-linguagem.htm"
         print(f"Figuras de Linguagem: {link}")
@@ -259,7 +251,7 @@ while True:
                 print("Digite '1' para voltar para página INICIAL  \nDigite '2' para SAIR do aplicativo \nDigite '3' para PERMANECER na pagina de estudos")
             break
 
-    elif resposta_certa1_normalizada == "4":
+    elif escolha == 4:
         print("Assunto que você pode estudar:")
         link = "https://brasilescola.uol.com.br/filosofia/filosofia-politica.htm"
         print(f"Filosofia Politica: {link}")
@@ -281,7 +273,7 @@ while True:
                 print("Digite 'INICIAL' para voltar para página inicial  \nDigite 'SAIR' para sair do aplicativo \nDigite 'CONTINUAR' para permanecer na pagina de estudos")
             break
 
-    elif resposta_certa1_normalizada == "5":
+    elif escolha == 5:
         print("Assunto que você pode estudar:")
         link = "https://brasilescola.uol.com.br/historiag/historia-da-arte.htm"
         print(f"História da Arte: {link}")
@@ -303,3 +295,20 @@ while True:
                 print("Resposta inválida, tente novamente!")
                 print("Digite '1' para voltar para página INICIAL  \nDigite '2' para SAIR do aplicativo \nDigite '3' para PERMANECER na pagina de estudos")
             break
+    else:
+        os.system("cls")
+        print("\n\nDisciplina não cadastrada!\n\n")
+        print("Digite '1' para voltar para página INICIAL  \nDigite '2' para SAIR do aplicativo \nDigite '3' para PERMANECER na pagina de estudos")
+        while True:
+
+            final = input().lower()
+            if final in ['1']:
+                import pag_inicial
+            elif final in ['2']:
+                import main
+            elif final in ['3']:
+                import notas
+            else:
+                print("\n\nResposta inválida, tente novamente!\n\n")
+                print("Digite '1' para voltar para página INICIAL  \nDigite '2' para SAIR do aplicativo \nDigite '3' para PERMANECER na pagina de estudos")
+

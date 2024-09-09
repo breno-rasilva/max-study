@@ -24,25 +24,14 @@ def menu_perguntas(pergunta):  # função para as perguntas
             print("Resposta inválida. Por favor, digite 'Sim' ou 'Não'.")
 
 
-def normalizar(texto):  # função para converter caracteres com acentos em textos simples. (texto)parâmetro
-    return unidecode.unidecode(texto).lower()
 
-
-def menu_perguntas(pergunta_1, resposta_certa):  # função para as perguntas
+def menu_opcoes(pergunta, opcoes):
     os.system("cls")
-    print(pergunta_1)
-    # Solicita a resposta do usuário
-    respostas = input("Digite sua resposta: ")
-    # compara a resposta do usuário com a resposta certa e converte para o texto simples
-    if normalizar(respostas) == normalizar(resposta_certa):
-        print("Resposta correta!\n")
-        return True
-    else:
-        print("Resposta incorreta.\n")
-        return False
-
-
-pergunta_1 = "Qual a disciplina você quer estudar? \n\n1-MATEMÁTICA \n2-BIOLOGIA \n3-QUÍMICA \n4-GEOGRAFIA \n\nDigite uma opção:"
+    print(pergunta)
+    for i, opcao in enumerate(opcoes, start=1):
+        print(f"{i}. {opcao}")
+    escolha = int(input("Escolha uma opção: "))
+    return escolha
 
 
 def fazer_pergunta(pergunta, opcoes, resposta_correta):
@@ -57,8 +46,7 @@ def fazer_pergunta(pergunta, opcoes, resposta_correta):
     # método upper utilizado para converter as strings em letras maiúsculas
     resposta = input("Escolha a opção correta (A/B/C/D/E): ").upper()
 
-    if resposta in letras:  # verifica se a resposta é de acorodo com a lista de letras
-        # comparação do indice da lista de respostas[0,1,2]
+    if resposta in letras:  
         os.system("cls")
         if resposta == letras[resposta_correta - 1]:
             print("Resposta correta!\n")
@@ -85,15 +73,10 @@ def quiz():
             "resposta_correta": 5  # Alternativa E.
         }
     ]
-
-    pontuacao = 0  # pontuação inicial em zero
-
-    for pergunta in perguntas:  # repete a pergunta na lista de perguntas
-        # função para de pergunta ao usuário se resposta verdadeira ele retorna True e False caso contrário
+    pontuacao = 0 
+    for pergunta in perguntas:  
         if fazer_pergunta(pergunta["pergunta"], pergunta["opcoes"], pergunta["resposta_correta"]):
             pontuacao += 1
-
-    # imprimi para o usuário quantas respostas ele acertou
     print(f"\n\nVocê acertou {pontuacao} de {len(perguntas)} perguntas.\n\n")
 
 
@@ -171,11 +154,13 @@ def quiz_3():
 # -----------------------------------------------------------------------------------------------------
 while True:
     os.system("cls")
-    resposta_certa1 = input(pergunta_1 + " ")
-    resposta_certa1_normalizada = normalizar(resposta_certa1)
+    pergunta = "Escolha uma opção:"
+    opcoes = ["Matemática;", "Biologia;",
+          "Química;", "Geografia;"]
+    escolha = menu_opcoes(pergunta, opcoes)
 
-    if resposta_certa1_normalizada == "1":
-        print("Assunto que você pode estudar:")
+    if escolha == 1:
+        print("\n\nAssunto que você pode estudar:")
         link = "https://www.todamateria.com.br/conjuntos-numericos/"
         print(f"Conjuntos Numéricos: {link}")
         print("")
@@ -196,9 +181,9 @@ while True:
                 print("\n\nResposta inválida, tente novamente!\n\n")
                 print("Digite 'INICIAL' para voltar para página inicial  \n\nDigite 'SAIR' para sair do aplicativo \n\nDigite 'CONTINUAR' para permanecer na pagina de estudos")
             break
-    elif resposta_certa1_normalizada == "2":
+    elif escolha == 2:
         os.system("cls")
-        print("Assunto que você pode estudar:")
+        print("\n\nAssunto que você pode estudar:")
         link = "https://mundoeducacao.uol.com.br/biologia/ecologia.htm"
         print(f"Ecologia: {link}")
         print("")
@@ -219,8 +204,8 @@ while True:
                 print("Resposta inválida, tente novamente!")
                 print("Digite '1' para voltar para página INICIAL  \nDigite '2' para SAIR do aplicativo \nDigite '3' para PERMANECER na pagina de estudos")
             break
-    elif resposta_certa1_normalizada == "3":
-        print("Assunto que você pode estudar:")
+    elif escolha == 3:
+        print("\n\nAssunto que você pode estudar:")
         link = "https://brasilescola.uol.com.br/quimica/quimica-organica.htm"
         print(f"Química Orgânica: {link}")
         print("")
@@ -242,8 +227,8 @@ while True:
                 print("Digite '1' para voltar para página INICIAL  \nDigite '2' para SAIR do aplicativo \nDigite '3' para PERMANECER na pagina de estudos")
             break
 
-    elif resposta_certa1_normalizada == "4":
-        print("Assunto que você pode estudar:")
+    elif escolha == 4:
+        print("\n\nAssunto que você pode estudar:")
         link = "https://www.suapesquisa.com/geografia/pernambuco.htm"
         print(f"Geografia de Pernambuco: {link}")
         print("")

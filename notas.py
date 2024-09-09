@@ -3,6 +3,7 @@ import chardet
 import time
 import statistics
 import re
+import codecs
 
 # Caminho do arquivo de texto com os horários
 
@@ -47,82 +48,54 @@ time.sleep(10)
 
 def med_exatas(caminho_txt1):
     os.system("cls")
-    # Detectando a codificação do arquivo
-    with open(caminho_txt1, 'rb') as arquivo1:
-        resultado = chardet.detect(arquivo1.read())
-        encoding = resultado['encoding']
+    notas = []
+    with codecs.open(caminho_txt1, 'r', encoding='utf-8') as arquivo1:
+        for linha in arquivo1:
+            disciplina, nota_str = linha.strip().split(': ')
+            nota = float(nota_str)
+            notas.append((disciplina, nota))
 
-    # Lendo o arquivo com a codificação correta
-    with open(caminho_txt1, "r", encoding=encoding) as arquivo1:
-        linhas = arquivo1.readlines()
+    media_exatas = sum(nota for _, nota in notas) / len(notas)
+    # Arredondando a média para uma casa decimal
+    media_arredondada = round(media_exatas, 1)
 
-    soma_notas1 = 0
-    contagem_notas1 = 0
+    print("\nNotas:")
+    for disciplina, nota in notas:
+        print(f"{disciplina}: {nota}")
+    print(f"\nMédia das notas: {media_arredondada}")
 
-    for linha in linhas:
-        linha = linha.strip()
-        print(linha, "\n")
-        try:
-            # Extraindo a nota da linha e convertendo para float
-            nota = float(linha.split(': ')[1])
-            soma_notas1 += nota
-            contagem_notas1 += 1
-        except (IndexError, ValueError):
-            print(f"Erro ao processar a linha: {linha}")
-            continue
+    return media_exatas
 
-    # Calculando a média
-    if contagem_notas1 > 0:
-        media1 = soma_notas1 / contagem_notas1
-    else:
-        media1 = 0
-
-    print("\nSoma das notas de exatas:", soma_notas1)
-    print("Média das notas de exatas:", media1, "\n\n")
-
-    return media1
-
-
+caminho_txt1 = r"C:\\Users\\breno\\OneDrive\\Documentos\\PROJETOS 1° PERIODO\\APP AULA atualizado\\respostas_media_exa.txt"
+media_exatas = med_exatas(caminho_txt1)
+print(f"A média final é: {media_exatas}")
 # ------------------------------------------------------------------------------------------------------------------
 def med_humanas(caminho_txt2):
     os.system("cls")
-    # Detectando a codificação do arquivo
-    with open(caminho_txt2, 'rb') as arquivo2:
-        resultado = chardet.detect(arquivo2.read())
-        encoding = resultado['encoding']
+    notas = []
+    with codecs.open(caminho_txt2, 'r', encoding='utf-8') as arquivo2:
+        for linha in arquivo2:
+            disciplina, nota_str = linha.strip().split(': ')
+            nota = float(nota_str)
+            notas.append((disciplina, nota))
 
-    # Lendo o arquivo com a codificação correta
-    with open(caminho_txt2, "r", encoding=encoding) as arquivo2:
-        linhas = arquivo2.readlines()
+    media_humanas = sum(nota for _, nota in notas) / len(notas)
+    # Arredondando a média para uma casa decimal
+    media_arredondada = round(media_humanas, 1)
 
-    soma_notas2 = 0
-    contagem_notas2 = 0
+    print("\nNotas:")
+    for disciplina, nota in notas:
+        print(f"{disciplina}: {nota}")
+    print(f"\nMédia das notas: {media_arredondada}")
 
-    for linha in linhas:
-        linha = linha.strip()
-        print(linha, "\n")
+    return media_humanas
 
-        try:
-            # Extraindo a nota da linha e convertendo para float
-            nota = float(linha.split(': ')[1])
-            soma_notas2 += nota
-            contagem_notas2 += 1
-        except (IndexError, ValueError):
-            print(f"Erro ao processar a linha: {linha}")
-            continue
-
-    # Calculando a média
-    if contagem_notas2 > 0:
-        media2 = soma_notas2 / contagem_notas2
-    else:
-        media2 = 0
-
-    print("\nSoma das notas de humanas:", soma_notas2)
-    print("Média das notas de humanas:", media2, "\n\n")
-
-    return media2
+caminho_txt2 = r"C:\\Users\\breno\\OneDrive\\Documentos\\PROJETOS 1° PERIODO\\APP AULA atualizado\\respostas_media_huma.txt"
+media_humanas = med_humanas(caminho_txt2)
+print(f"A média final é: {media_humanas}")
 
 
+#------------------------------------------------------------------------------------------------------------------------------------------------------------
 def menu_opcoes(pergunta, opcoes):
     os.system("cls")
     print(pergunta)
@@ -132,15 +105,15 @@ def menu_opcoes(pergunta, opcoes):
     return escolha
 
 
-caminho_txt1 = r"C:\\Users\\breno\\OneDrive\\Documentos\\PROJETOS 1° PERIODO\\APP AULA atualizado\\respostas_media_exa.txt"
-caminho_txt2 = r"C:\\Users\\breno\\OneDrive\\Documentos\\PROJETOS 1° PERIODO\\APP AULA atualizado\\respostas_media_huma.txt"
+'''caminho_txt1 = r"C:\\Users\\breno\\OneDrive\\Documentos\\PROJETOS 1° PERIODO\\APP AULA atualizado\\respostas_media_exa.txt"
+caminho_txt2 = r"C:\\Users\\breno\\OneDrive\\Documentos\\PROJETOS 1° PERIODO\\APP AULA atualizado\\respostas_media_huma.txt"'''
 pergunta = "Escolha uma opção:"
 opcoes = ["Visualizar notas de EXATAS;", "Visualizar notas de HUMANAS;",
           "Visualizar TUDO;", "Voltar para PÁGINA INICIAL;", "SAIR"]
 
 
-media_exatas = med_exatas(caminho_txt1)
-media_humanas = med_humanas(caminho_txt2)
+'''media_exatas = med_exatas(caminho_txt1)
+media_humanas = med_humanas(caminho_txt2)'''
 
 while True:
     escolha = menu_opcoes(pergunta, opcoes)

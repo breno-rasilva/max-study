@@ -187,7 +187,7 @@ def media_disciplinas_huma():
 # ------------------------------------------------------------------------------------
 
 def registrar_horarios():
-    os.system("cls")  # Limpa a tela (específico para Windows)
+    os.system("cls")  
 
     horarios = {}
     dias_semana = ['Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado', 'Domingo']
@@ -204,7 +204,7 @@ def registrar_horarios():
             except ValueError:
                 print("Formato de hora inválido. Use HH:MM.")
 
-        horarios[dia] = f"{hora:02d}:{minuto:02d}"  # Formatação mais concisa
+        horarios[dia] = f"{hora:02d}:{minuto:02d}" 
 
     with open('respostas_dias_semana.txt', 'w', encoding='utf-8') as arquivo:
         for dia, horario in horarios.items():
