@@ -125,7 +125,6 @@ def med_humanas(caminho_txt2):
 
 def menu_opcoes(pergunta, opcoes):
     os.system("cls")
-    # Implementação do menu_opcoes com opções numeradas a partir de 1
     print(pergunta)
     for i, opcao in enumerate(opcoes, start=1):
         print(f"{i}. {opcao}")

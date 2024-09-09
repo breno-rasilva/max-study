@@ -24,8 +24,9 @@ def menu_perguntas(pergunta):  # função para as perguntas
         else:
             print("Resposta inválida. Por favor, digite 'SIM/NÃO ou S/N':")
 
+
 def menu_opcoes(pergunta, opcoes):
-  
+
     os.system("cls")
     while True:
         print(pergunta)
@@ -49,8 +50,8 @@ def menu_perguntas_int(pergunta):
         try:  # try converte a reposta do usuário para um número inteiro
             resposta = int(input(pergunta))
             return resposta
-        except ValueError:  # se o usuário digitar um caractere que esteja fora do esperado, 
-            #o programa apresenta um erro e retorna a pergunta
+        except ValueError:  # se o usuário digitar um caractere que esteja fora do esperado,
+            # o programa apresenta um erro e retorna a pergunta
             print(
                 "Resposta inválida. Por favor, insira um número INTEIRO(ex:'2').")
 
@@ -64,14 +65,15 @@ def menu_perguntas_float(pergunta):
         except ValueError:
             print(
                 "Resposta inválida. Por favor, insira um número INTEIRO ou DECIMAL (ex:'2' ou '2.5').")
-            
+
+
 def converter_hora():
     while True:
         hora = input("Digite a hora no formato HH:MM: ")
 
         try:
             datetime.datetime.strptime(hora, '%H:%M')
-            break 
+            break
         except ValueError:
             print("Formato de hora inválido. Use HH:MM.")
 
@@ -175,7 +177,7 @@ def media_disciplinas_huma():
     respostas.append(f"Média de inglês: {resposta19}")
     print("")
 
-    with  codecs.open('respostas_media_huma.txt', 'w', 'utf-8') as humanas:  # 'w' para sobrescrever
+    with codecs.open('respostas_media_huma.txt', 'w', 'utf-8') as humanas:  # 'w' para sobrescrever
         for resposta in respostas:
             humanas.write(resposta + '\n')
 
@@ -185,39 +187,30 @@ def media_disciplinas_huma():
 # ------------------------------------------------------------------------------------
 
 def registrar_horarios():
-    os.system("cls")
-
+    os.system("cls")  # Limpa a tela (específico para Windows)
 
     horarios = {}
     dias_semana = ['Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado', 'Domingo']
 
     for dia in dias_semana:
         while True:
-            horario = input(f"Quanto tempo livre você tem no(a) {dia} (ex: formato HH:MM):\n ")
+            horario = input(f"Quanto tempo livre você tem no(a) {dia} (HH:MM): ")
             try:
                 hora, minuto = map(int, horario.split(':'))
                 if 0 <= hora <= 23 and 0 <= minuto <= 59:
                     break
                 else:
-                    print("Hora ou minuto inválido. Digite novamente.")
+                    print("Hora ou minuto inválido.")
             except ValueError:
                 print("Formato de hora inválido. Use HH:MM.")
 
-        horarios[dia] = (hora, minuto)
+        horarios[dia] = f"{hora:02d}:{minuto:02d}"  # Formatação mais concisa
 
-    with  codecs.open('respostas_dias_semana.txt', 'w','utf-8') as semana_dias:
+    with open('respostas_dias_semana.txt', 'w', encoding='utf-8') as arquivo:
         for dia, horario in horarios.items():
-            hora, minuto = horario
-            hora_formatada = str(hora).zfill(2)
-            minuto_formatado = str(minuto).zfill(2)
-            semana_dias.write(f"{dia}: {hora_formatada}:{minuto_formatado}\n")
-
-
-
+            arquivo.write(f"{dia}: {horario}\n")
 
 # --------------------------------------------------------------------
-
-
 while True:
     resposta = menu_perguntas(estuda)
     print("Sua resposta:", resposta)
