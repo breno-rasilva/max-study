@@ -1,13 +1,17 @@
  # Max Study
 
+ ## Resumo do projeto
+ O objetivo maior deste projeto é oferecer um espaço de estudos em que o discente possa utilizar de acordo com a sua rotina fora da sala de aula. Não se trata apenas de uma aplicação de estudos, mas sim de uma aplicação que mostra os caminhos necessários para um estudo eficiente e que, principalmente, ofereça uma recompensa.
 
- Aplicação desenvolvida ...
 
- ## Índice 
- - <a href="#-funcionalidades-do-projeto"> Funcionalidades do Projeto</a>
- - <a href="Funcoes">Funções</a>
- - <a href="TXT">TXT</a>
- - <a href="Fluxogramas"> Fluxogramas</a>
+ ## Índices 
+ - <a href="#funcionalidades-do-projeto"> Funcionalidades do Projeto</a>
+ - <a href="#funções">Funções</a>
+ - <a href="#como-são-usadas-as-funções">Como são usadas as funções</a>
+ - <a href="#txt">TXT</a>
+ - <a href="#fluxogramas"> Fluxogramas</a>
+ - <a href="#autor-do-projeto"> Autor do projeto</a>
+ - <a href="#futuras-realeses"> Futuras realeses</a>
 
 
 
@@ -218,6 +222,11 @@
  ![Fluxograma-ÁREA DE ESTUDOS](área%20de%20estudos.png)
 
  ## Autor do projeto
+ ### Breno Ramos da Silva, 23 anos. 
+ ### Sistemas de Informação
+ ### Universidade Federal Rural de Pernambuco-UFRPE - SEDE
+  
+
 
 
  <img style="width:400px" src="breno_ramos.jpg" alt="Breno Ramos da Silva, 23 anos. Estudante do curso de Sistemas de Informação, 1º período.">
