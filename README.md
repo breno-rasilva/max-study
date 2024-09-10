@@ -222,7 +222,7 @@
  ![Fluxograma-ÁREA DE ESTUDOS](área%20de%20estudos.png)
 
  ## Autor do projeto
- ### Breno Ramos da Silva, 23 anos. 
+ ### Breno Ramos da Silva 
  ### Sistemas de Informação
  ### Universidade Federal Rural de Pernambuco-UFRPE - SEDE
   
