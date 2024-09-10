@@ -222,7 +222,7 @@ while True:
         print("")
 
         while True:
-            if (resposta1 == True):  # VOCE REPROVOU
+            if (resposta1 == True):  
                 menu_opcoes(responda, opcoes1)
                 print("")
                 resposta3 = menu_perguntas(estuda_casa)
