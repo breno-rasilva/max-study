@@ -1,5 +1,4 @@
 import os
-import chardet
 import time
 import statistics
 import re
@@ -11,11 +10,9 @@ import codecs
 def calcular_mediana_horarios(caminho_txt):
 
     horarios_em_minutos = []
-
     with open(caminho_txt, "r") as arquivo:
             for linha_num, linha in enumerate(arquivo, start=1):
                 linha = linha.strip()
-                # Expressão regular mais flexível para permitir diferentes formatos
                 match = re.match(r"^\w+:?\s*(\d{1,2}):(\d{2})$", linha)
                 if not match:
                     raise ValueError(f"Formato de horário inválido na linha {linha_num}: {linha}")
@@ -27,19 +24,11 @@ def calcular_mediana_horarios(caminho_txt):
                 minutos = mediana_minutos % 60
                 return f"{horas:02d}:{minutos:02d}"
 
-   
-
-# Exemplo de uso
 caminho_do_arquivo = r"C:\\Users\\breno\\OneDrive\\Documentos\\PROJETOS 1° PERIODO\\APP AULA atualizado\\respostas_dias_semana.txt"
 mediana = calcular_mediana_horarios(caminho_do_arquivo)
 print("\nDe acordo com sua resposta no cadastro, obteve-se o seguinte resultado.")
 print(f"\nO tempo médio que você deve estudar todos os dias: {mediana}")
 print("\n\nAGUARDE! VOCÊ SERÁ REDIRECIONADO...\n\n")
-
-
-#caminho_txt = r"C:\\Users\\breno\\OneDrive\\Documentos\\PROJETOS 1° PERIODO\\APP AULA atualizado\\respostas_dias_semana.txt"
-
-
 time.sleep(10)
    
 
@@ -56,14 +45,11 @@ def med_exatas(caminho_txt1):
             notas.append((disciplina, nota))
 
     media_exatas = sum(nota for _, nota in notas) / len(notas)
-    # Arredondando a média para uma casa decimal
     media_arredondada = round(media_exatas, 1)
-
     print("\nNotas:")
     for disciplina, nota in notas:
         print(f"{disciplina}: {nota}")
     print(f"\nMédia das notas: {media_arredondada}")
-
     return media_exatas
 
 caminho_txt1 = r"C:\\Users\\breno\\OneDrive\\Documentos\\PROJETOS 1° PERIODO\\APP AULA atualizado\\respostas_media_exa.txt"
@@ -80,9 +66,7 @@ def med_humanas(caminho_txt2):
             notas.append((disciplina, nota))
 
     media_humanas = sum(nota for _, nota in notas) / len(notas)
-    # Arredondando a média para uma casa decimal
     media_arredondada = round(media_humanas, 1)
-
     print("\nNotas:")
     for disciplina, nota in notas:
         print(f"{disciplina}: {nota}")
@@ -105,15 +89,12 @@ def menu_opcoes(pergunta, opcoes):
     return escolha
 
 
-'''caminho_txt1 = r"C:\\Users\\breno\\OneDrive\\Documentos\\PROJETOS 1° PERIODO\\APP AULA atualizado\\respostas_media_exa.txt"
-caminho_txt2 = r"C:\\Users\\breno\\OneDrive\\Documentos\\PROJETOS 1° PERIODO\\APP AULA atualizado\\respostas_media_huma.txt"'''
 pergunta = "Escolha uma opção:"
 opcoes = ["Visualizar notas de EXATAS;", "Visualizar notas de HUMANAS;",
           "Visualizar TUDO;", "Voltar para PÁGINA INICIAL;", "SAIR"]
 
 
-'''media_exatas = med_exatas(caminho_txt1)
-media_humanas = med_humanas(caminho_txt2)'''
+
 
 while True:
     escolha = menu_opcoes(pergunta, opcoes)

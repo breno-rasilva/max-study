@@ -1,4 +1,3 @@
-import unidecode
 import os
 import time
 
