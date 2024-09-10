@@ -1,28 +1,23 @@
 import os
 import time
 import statistics
-import re
 import codecs
 
-# Caminho do arquivo de texto com os horários
 
 
 def calcular_mediana_horarios(caminho_txt):
-
-    horarios_em_minutos = []
+    horarios = []
     with open(caminho_txt, "r") as arquivo:
-            for linha_num, linha in enumerate(arquivo, start=1):
-                linha = linha.strip()
-                match = re.match(r"^\w+:?\s*(\d{1,2}):(\d{2})$", linha)
-                if not match:
-                    raise ValueError(f"Formato de horário inválido na linha {linha_num}: {linha}")
-                hora, minuto = map(int, match.groups())
-                horarios_em_minutos.append(hora * 60 + minuto)
-
-                mediana_minutos = statistics.median(horarios_em_minutos)
-                horas = mediana_minutos // 60
-                minutos = mediana_minutos % 60
-                return f"{horas:02d}:{minutos:02d}"
+        for linha in arquivo:
+            horario = linha.strip()  
+            horarios.append(horario)
+            horarios.sort()
+    meio = len(horarios) // 2
+    if len(horarios) % 2 == 1:
+        mediana = horarios[meio]
+    else:
+        mediana = (horarios[meio - 1] + horarios[meio]) / 2
+    return mediana
 
 caminho_do_arquivo = r"C:\\Users\\breno\\OneDrive\\Documentos\\PROJETOS 1° PERIODO\\APP AULA atualizado\\respostas_dias_semana.txt"
 mediana = calcular_mediana_horarios(caminho_do_arquivo)
@@ -40,8 +35,8 @@ def med_exatas(caminho_txt1):
     notas = []
     with codecs.open(caminho_txt1, 'r', encoding='utf-8') as arquivo1:
         for linha in arquivo1:
-            disciplina, nota_str = linha.strip().split(': ')
-            nota = float(nota_str)
+            disciplina, nota_exa = linha.strip().split(': ')
+            nota = float(nota_exa)
             notas.append((disciplina, nota))
 
     media_exatas = sum(nota for _, nota in notas) / len(notas)
@@ -61,8 +56,8 @@ def med_humanas(caminho_txt2):
     notas = []
     with codecs.open(caminho_txt2, 'r', encoding='utf-8') as arquivo2:
         for linha in arquivo2:
-            disciplina, nota_str = linha.strip().split(': ')
-            nota = float(nota_str)
+            disciplina, nota_huma = linha.strip().split(': ')
+            nota = float(nota_huma)
             notas.append((disciplina, nota))
 
     media_humanas = sum(nota for _, nota in notas) / len(notas)
