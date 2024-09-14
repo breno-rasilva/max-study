@@ -46,11 +46,10 @@ def menu_opcoes(pergunta, opcoes):
 def menu_perguntas_int(pergunta):
     os.system("cls")
     while True:
-        try:  # try converte a reposta do usuário para um número inteiro
+        try:  
             resposta = int(input(pergunta))
             return resposta
-        except ValueError:  # se o usuário digitar um caractere que esteja fora do esperado,
-            # o programa apresenta um erro e retorna a pergunta
+        except ValueError:  
             print(
                 "Resposta inválida. Por favor, insira um número INTEIRO(ex:'2').")
 
@@ -140,7 +139,6 @@ def media_disciplinas_exa():
     with codecs.open('respostas_media_exa.txt', 'w', 'utf-8') as exatas:
         for resposta in respostas:
             exatas.write(resposta + '\n')
-
     print("Respostas armazenadas com sucesso!")
 
 
