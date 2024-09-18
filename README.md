@@ -9,7 +9,9 @@
  - <a href="#funções">Funções</a>
  - <a href="#como-são-usadas-as-funções">Como são usadas as funções</a>
  - <a href="#txt">TXT</a>
+ - <a href="#bibliotecas-utilizadas">Bibliotecas utilizadas</a>
  - <a href="#fluxogramas"> Fluxogramas</a>
+  - <a href="#apresentação-em-slide"> Apresentação do projeto em slide</a>
  - <a href="#autor-do-projeto"> Autor do projeto</a>
  - <a href="#futuras-realeses"> Futuras realeses</a>
 
@@ -213,6 +215,17 @@
  
  ```
 
+ ## Bibliotecas utilizadas
+
+ ```bash
+ import os #Pode ser utilizada para fazer a limpeza do terminal 
+ import date time #Permite realizar operações como adição e subtração de datas e horas, calcular intervalos de tempo
+ import codecs #Permite a codificação de um texto, como UTF-8, ASCII, Latin-1, etc.
+ import statistics #As funções são otimizadas para realizar cálculos estatísticos de forma rápida e eficiente.
+ import re #Permite criar padrões complexos para encontrar praticamente qualquer tipo de texto.
+  
+ ```
+
  ## Fluxogramas 
 
  ![Fluxograma-CADASTRO](cadastro.png)
@@ -220,6 +233,12 @@
  ![Fluxograma-CADASTRO PERSONALIZADO](cadastro%20personalizado.png)
 
  ![Fluxograma-ÁREA DE ESTUDOS](área%20de%20estudos.png)
+
+ ## Apresentação em slide
+
+
+
+([Clique aqui para visualizar o slide](https://www.canva.com/design/DAGQScBcGo4/mijbkWyS9PLDnTBPEUB7_Q/edit?utm_content=DAGQScBcGo4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton))
 
  ## Autor do projeto
  ### Breno Ramos da Silva 
